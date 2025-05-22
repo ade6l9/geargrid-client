@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Cropper from "react-easy-crop";
 import { getCroppedImg } from "./cropImage";
 import "../css/Profile.css";
-import { resolveImageUrl } from '../utils/imageUrl';
+import { API_BASE, resolveImageUrl } from '../utils/imageUrl';
 
 const Profile = () => {
   const [currentBuilds, setCurrentBuilds] = useState([]);
@@ -59,7 +59,7 @@ const Profile = () => {
     const fetchUserProfileAndFollowStatus = async () => {
       setIsLoadingProfile(true);
       try {
-        const profileResponse = await fetch(`http://localhost:3001/api/user-profile/${targetUserId}`, {
+        const profileResponse = await fetch(`${API_BASE}/api/user-profile/${targetUserId}`, {
           credentials: 'include',
         });
         const profileApiData = await profileResponse.json();
@@ -75,7 +75,7 @@ const Profile = () => {
         }
 
         if (!isOwnProfile && loggedInUserId) {
-          const statusResponse = await fetch(`http://localhost:3001/api/follows/status/${targetUserId}`, {
+          const statusResponse = await fetch(`${API_BASE}api/follows/status/${targetUserId}`, {
             credentials: 'include',
           });
           const statusData = await statusResponse.json();
@@ -84,13 +84,13 @@ const Profile = () => {
           }
         }
 
-        const followersResponse = await fetch(`http://localhost:3001/api/follows/${targetUserId}/followers`);
+        const followersResponse = await fetch(`${API_BASE}/api/follows/${targetUserId}/followers`);
         const followersData = await followersResponse.json();
         if (followersData.success) {
           setFollowerCount(followersData.followers.length);
         }
 
-        const followingResponse = await fetch(`http://localhost:3001/api/follows/${targetUserId}/following`);
+        const followingResponse = await fetch(`${API_BASE}/api/follows/${targetUserId}/following`);
         const followingData = await followingResponse.json();
         if (followingData.success) {
           setFollowingCount(followingData.following.length);
@@ -112,8 +112,8 @@ const Profile = () => {
       return;
     }
     const url = isFollowing 
-      ? `http://localhost:3001/api/follows/${targetUserId}` 
-      : `http://localhost:3001/api/follows`;
+      ? `${API_BASE}/api/follows/${targetUserId}` 
+      : `${API_BASE}/api/follows`;
     const method = isFollowing ? 'DELETE' : 'POST';
 
     try {
@@ -143,7 +143,7 @@ const Profile = () => {
 
     const fetchBuilds = async () => {
       try {
-        const res = await fetch(`http://localhost:3001/api/builds?userId=${targetUserId}`, {
+        const res = await fetch(`${API_BASE}/api/builds?userId=${targetUserId}`, {
           credentials: "include",
         });
         const data = await res.json();
@@ -198,8 +198,8 @@ const Profile = () => {
         setIsLoadingFollows(true);
         try {
           const [followersRes, followingRes] = await Promise.all([
-            fetch(`http://localhost:3001/api/follows/${loggedInUserId}/followers`, { credentials: 'include' }),
-            fetch(`http://localhost:3001/api/follows/${loggedInUserId}/following`, { credentials: 'include' })
+            fetch(`${API_BASE}/api/follows/${loggedInUserId}/followers`, { credentials: 'include' }),
+            fetch(`${API_BASE}/api/follows/${loggedInUserId}/following`, { credentials: 'include' })
           ]);
 
           const followersData = await followersRes.json();

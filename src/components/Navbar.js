@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../css/Navbar.css";
 import { Helmet } from 'react-helmet';
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const Menu = ({ closeMenu }) => {
   const navigate = useNavigate();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -14,7 +16,7 @@ const Menu = ({ closeMenu }) => {
   const handleLogout = async () => {
     setShowLogoutModal(false);
     try {
-      const response = await fetch('http://localhost:3001/api/logout', {
+      const response = await fetch(`${API_BASE}/api/logout`, {
         method: 'POST',
         credentials: 'include'
       });

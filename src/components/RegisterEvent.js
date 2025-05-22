@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../css/RegisterEvent.css";
 import { Helmet } from 'react-helmet';
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const initialCarState = {
   make: "",
   model: "",
@@ -44,7 +46,7 @@ const RegisterEvent = () => {
       setError("");
       const fetchRegistrationDetails = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/api/get-registration-details?eventId=${event.id}&email=${userEmailForEdit}`, {
+          const response = await fetch(`${API_BASE}/api/get-registration-details?eventId=${event.id}&email=${userEmailForEdit}`, {
             credentials: 'include',
           });
           const data = await response.json();
@@ -152,8 +154,8 @@ const RegisterEvent = () => {
     };
 
     const endpoint = editMode 
-      ? `http://localhost:3001/api/update-event-registration/${registrantDetails.id}`
-      : 'http://localhost:3001/api/register-event';
+      ? `${API_BASE}/api/update-event-registration/${registrantDetails.id}`
+      : `${API_BASE}/api/register-event`;
     
     const method = editMode ? 'PUT' : 'POST';
 

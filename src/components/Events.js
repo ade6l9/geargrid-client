@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../css/Events.css";
 import { Helmet } from 'react-helmet';
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const Events = () => {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const Events = () => {
     const fetchEvents = async () => {
       try {
         
-        const response = await fetch('http://localhost:3001/api/events' , {
+        const response = await fetch(`${API_BASE}/api/events`, {
           credentials: 'include',
         });
         
@@ -39,7 +41,7 @@ const Events = () => {
 
     try {
       console.log('Attempting to check registration for event:', event.id, 'with email:', userEmail);
-      const response = await fetch('http://localhost:3001/api/check-registration', {
+      const response = await fetch(`${API_BASE}/api/check-registration`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../css/Signup.css";
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const Signup = () => {
 
   useEffect(() => {
@@ -69,7 +71,7 @@ const Signup = () => {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
   
-      const response = await fetch('http://localhost:3001/api/signup', { //sends post request to signup api w the form data from line 5 (http://localhost:3007/api/signup) or (/api/signup)
+      const response = await fetch(`${API_BASE}/api/signup`, { //sends post request to signup api w the form data from line 5 (http://localhost:3007/api/signup) or (/api/signup)
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

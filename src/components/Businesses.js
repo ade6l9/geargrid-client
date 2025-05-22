@@ -3,6 +3,8 @@ import { Link, useNavigate} from "react-router-dom";
 import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps';
 import "../css/Businesses.css";
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 const Businesses = () => {
   const [address, setAddress] = useState("");
   const [category, setCategory] = useState("");
@@ -21,7 +23,7 @@ const Businesses = () => {
   useEffect(() => {
     const fetchBusinesses = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/businesses");
+        const response = await fetch(`${API_BASE}/api/businesses`);
         const data = await response.json();
         if (data.success) {
           setBusinesses(data.businesses);

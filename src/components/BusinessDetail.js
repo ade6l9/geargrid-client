@@ -3,6 +3,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/BusinessDetail.css";
 
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+
 // main component for displaying individual business page
 const BusinessDetail = () => {
   const { name: businessName } = useParams();
@@ -25,7 +27,7 @@ const BusinessDetail = () => {
   const fetchBusinessDetails = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/businesses/${encodeURIComponent(businessName)}`);
+      const response = await fetch(`${API_BASE}/api/businesses/${encodeURIComponent(businessName)}`);
       const data = await response.json();
       if (data.success) {
         setBusiness(data.business);
@@ -44,7 +46,7 @@ const BusinessDetail = () => {
   const fetchReviews = async (businessId) => {
     if (!businessId) return;
     try {
-      const response = await fetch(`http://localhost:3001/api/businesses/${businessId}/reviews`);
+      const response = await fetch(`${API_BASE}/api/businesses/${businessId}/reviews`);
       const data = await response.json();
       if (data.success) {
         setReviews(data.reviews);
@@ -78,8 +80,8 @@ const BusinessDetail = () => {
     };
 
     const url = editingReview
-      ? `http://localhost:3001/api/reviews/${editingReview.id}`
-      : `http://localhost:3001/api/businesses/${business.id}/reviews`;
+      ? `${API_BASE}/api/reviews/${editingReview.id}`
+      : `${API_BASE}/api/businesses/${business.id}/reviews`;
     const method = editingReview ? "PUT" : "POST";
 
     try {
