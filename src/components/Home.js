@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="home-container">
+      <div id="home-section" className="home-container">
         <div className="overlay"></div>
         <div className="content">
           <h1 className="fade-in">GEARGRID</h1>

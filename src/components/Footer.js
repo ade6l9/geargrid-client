@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from "react-router-hash-link";
 import '../css/Footer.css';
 import Modal from './Modal';
 
@@ -51,7 +51,7 @@ const Footer = () => {
         <div className="footer-columns">
           <div className="footer-column">
             <h4>Company</h4>
-            <Link to="/">Home</Link>
+            <Link to="/#home-section">Home</Link>
             <Link to="/contact">Contact</Link>
             <a href="/#about-section">About</a>
           </div>
