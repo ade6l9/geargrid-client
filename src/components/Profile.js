@@ -75,7 +75,7 @@ const Profile = () => {
         }
 
         if (!isOwnProfile && loggedInUserId) {
-          const statusResponse = await fetch(`${API_BASE}api/follows/status/${targetUserId}`, {
+          const statusResponse = await fetch(`${API_BASE}/api/follows/status/${targetUserId}`, {
             credentials: 'include',
           });
           const statusData = await statusResponse.json();
