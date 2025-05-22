@@ -292,9 +292,13 @@ const Profile = () => {
 
         <div className="profile-builds-container">
           <div className="profile-builds">
-            {activeTab === "current"
-              ? (currentBuilds.length ? renderImages(currentBuilds) : <p>No current builds.</p>)
-              : (previousBuilds.length ? renderImages(previousBuilds) : <p>No previous builds.</p>)}
+          {activeTab === "current"
+  ? (currentBuilds.length ? renderImages(currentBuilds) : (
+      <div className="no-builds-message">No current builds.</div>
+    ))
+  : (previousBuilds.length ? renderImages(previousBuilds) : (
+      <div className="no-builds-message">No previous builds.</div>
+    ))}
           </div>
         </div>
       </div>

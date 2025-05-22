@@ -6,7 +6,6 @@ import Signup from "./components/Signup";
 import ForgotPassword from "./components/ForgotPassword";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
-import Archive from "./components/Archive";
 import Events from "./components/Events";
 import OrganizeEvent from './components/OrganizeEvent';
 import Footer from './components/Footer';
@@ -40,7 +39,6 @@ const AppContent = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/user/:viewedUserId" element={<Profile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          <Route path="/archive" element={<Archive />} />
           <Route path="/events" element={<Events />} />
           <Route path="/organize-event" element={<OrganizeEvent />} />
           <Route path="/register" element={<RegisterEvent />} />
