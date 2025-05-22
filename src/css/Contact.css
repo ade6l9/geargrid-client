@@ -142,10 +142,11 @@
   color: #000;
 }
 
-/* === Scoped Back Button Offset — ONLY on Contact Page === */
-.contact-page .back-button {
-  margin-top: 115px;      
-  margin-left: 20px;      
+/* ===  Back Button Offset  === */
+.back-button {
+  position: absolute;           
+  top: 125px;                  
+  left: 40px;                 
   font-family: 'Oswald', sans-serif;
   background: none;
   border: none;
@@ -156,9 +157,9 @@
   padding: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  z-index: 10;                  
 }
 
-.contact-page .back-button:hover {
+.back-button:hover {
   text-decoration: underline;
 }
-
