@@ -177,7 +177,7 @@ const CarBuild = () => {
       </section>
 
       {/* Back button to return to profile */}
-      <button className="username-button" onClick={() => navigate(-1)}>
+      <button className="username-button" onClick={() => navigate(`/user/${build.user_id}`)}>
         Back to Profile
       </button>
     </div>
