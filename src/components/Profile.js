@@ -168,7 +168,7 @@ const Profile = () => {
     setIsSearching(true);
     const timerId = setTimeout(async () => {
       try {
-        const response = await fetch(`/api/search?q=${encodeURIComponent(searchQuery.trim())}`, {
+        const response = await fetch(`${API_BASE}/api/search?q=${encodeURIComponent(searchQuery.trim())}`, {
           credentials: 'include'
         });
         const data = await response.json();
