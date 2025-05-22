@@ -69,7 +69,7 @@ const AddBuild = () => {
     galleryFiles.forEach(file => file && formData.append('galleryImages', file));
 
     try {
-      const res = await fetch('/api/builds', {
+      const res = await fetch(`${API_BASE}/api/builds`, {
         method: 'POST',
         credentials: 'include',
         body: formData
