@@ -76,18 +76,6 @@ const Footer = () => {
 
       {/* bottom section */}
       <div className="footer-bottom">
-        {/* social media icons */}
-        <div className="social-icons">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
 
         {/* copyright notice with current year */}
         <p>&copy; {new Date().getFullYear()} GearGrid. All rights reserved.</p>
