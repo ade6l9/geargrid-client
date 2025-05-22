@@ -1,0 +1,554 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* === Page Layout === */
+.add-build-container-with-sidebar {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  gap: 3rem;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* === Sidebar Styling === */
+.sidebar-nav {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  border: 1px solid #d0d0d0;
+  min-width: 240px;
+  width: 240px;
+  height: fit-content;
+  position: sticky;
+  top: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-nav h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  padding: 0.75rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  color: #666666;
+  font-weight: 400;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sidebar-nav li:hover {
+  color: #000000;
+}
+
+.sidebar-nav li.active {
+  color: #000000;
+  font-weight: 500;
+  border-bottom-color: #000000;
+  background: #f5f5f5;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* === Main Form Area === */
+.main-form-area {
+  flex: 1;
+  background: #ffffff;
+  padding: 2rem;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* === Headings === */
+.main-form-area h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  color: #000000;
+  letter-spacing: -0.025em;
+}
+
+.main-form-area h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  letter-spacing: 0.025em;
+}
+
+/* === Form === */
+.add-build-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-build-form label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #000000;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.add-build-form select,
+.add-build-form input[type="text"],
+.add-build-form textarea,
+.add-build-form input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #b0b0b0;
+  background: #ffffff;
+  color: #000000;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.add-build-form select:focus,
+.add-build-form input[type="text"]:focus,
+.add-build-form textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.add-build-form select::placeholder,
+.add-build-form input[type="text"]::placeholder,
+.add-build-form textarea::placeholder {
+  color: #999999;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* === Radio Button Styling === */
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  position: relative;
+  vertical-align: middle;
+  transition: border-color 0.2s ease;
+}
+
+input[type="radio"]:checked {
+  border-color: #000000;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* === Radio Group Container === */
+fieldset {
+  border: 1px solid #d0d0d0;
+  padding: 1.5rem;
+  margin: 0;
+  background: #fafafa;
+}
+
+legend {
+  color: #000000;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+  color: #666666;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* === Mod Sub-blocks === */
+.mod-sub-block {
+  background: #fafafa;
+  border: 1px solid #d0d0d0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mod-sub-btn {
+  background: #ffffff;
+  border: 1px solid #b0b0b0;
+  font-weight: 400;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #000000;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.mod-sub-btn:hover {
+  border-color: #000000;
+  background: #f5f5f5;
+}
+
+.mod-sub-btn.active {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.mods-items {
+  padding-left: 1rem;
+}
+
+/* === Custom Inputs === */
+.custom-mod,
+.custom-sub {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: flex-end;
+}
+
+.custom-mod input,
+.custom-sub input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #b0b0b0;
+  background: #ffffff;
+  color: #000000;
+}
+
+.custom-mod button,
+.custom-sub button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.custom-mod button:hover,
+.custom-sub button:hover {
+  background: #333333;
+}
+
+/* === Navigation Buttons === */
+.step-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  gap: 1rem;
+}
+
+.step-nav-buttons button {
+  flex: 1;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #b0b0b0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-nav-buttons button:hover {
+  border-color: #000000;
+  background: #f5f5f5;
+}
+
+.step-nav-buttons button:disabled {
+  background: #f5f5f5;
+  color: #cccccc;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+
+/* === Upload Section === */
+.upload-box {
+  border: 2px dashed #b0b0b0;
+  padding: 2rem;
+  background: #fafafa;
+  margin-top: 1.5rem;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.upload-box:hover {
+  border-color: #000000;
+}
+
+.upload-box label {
+  display: block;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #000000;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* === File Input Styling === */
+input[type="file"] {
+  background: #ffffff !important;
+  border: 1px solid #b0b0b0;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background: #333333;
+}
+
+/* === File Previews === */
+.preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.preview-item {
+  position: relative;
+  display: inline-block; 
+}
+
+.preview-item .remove-btn {
+  position: absolute;
+  top: 4px;          
+  right: 4px;        
+  margin: 0;          
+  padding: 2px 6px;   
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 50%; 
+  cursor: pointer;
+  line-height: 1;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  z-index: 10;        
+}
+
+.preview-name{
+  display: none;
+}
+
+/* === Submit and Cancel Buttons === */
+.add-build-form button[type="submit"] {
+  background: #000000;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.add-build-form button[type="submit"]:hover {
+  background: #333333;
+}
+
+.add-build-form button[type="button"]:last-child {
+  margin-top: 1rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #b0b0b0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.add-build-form button[type="button"]:last-child:hover {
+  border-color: #000000;
+  background: #f5f5f5;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .add-build-container-with-sidebar {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  
+  .sidebar-nav {
+    width: 100%;
+    position: static;
+    margin-bottom: 1rem;
+  }
+  
+  .main-form-area {
+    padding: 1.5rem;
+  }
+  
+  .main-form-area h2 {
+    font-size: 1.75rem;
+  }
+  
+  .step-nav-buttons {
+    flex-direction: column;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* === Focus States === */
+*:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+/* Hide header */
+body[data-page="add-build"] header {
+  display: none;
+}
+
+/* === Fix: Mod Image Preview Size (mod uploads) === */
+.mod-image-preview {
+  margin-top: 1rem;
+}
+
+.mod-image-preview img {
+  width: 160px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.mod-sub-block {
+  position: relative;
+}
+
+/* Button inside the black bar */
+.mod-sub-btn {
+  position: relative;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mod-sub-btn .label-text {
+  flex: 1;
+}
+
+.mod-sub-delete {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 8px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.mod-sub-delete:hover {
+  color: #e00;
+}
+
+.preview-item img {
+  max-width: 160px;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  display: block;
+}

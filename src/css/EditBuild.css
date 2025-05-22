@@ -1,0 +1,372 @@
+/* === Page Wrapper === */
+.edit-build-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* === Header Title === */
+.edit-build-page h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+/* === Top Row: Title + Buttons === */
+.edit-build-page .cancel-row {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.edit-build-page .cancel-row .top-cancel,
+.edit-build-page .cancel-row .delete-btn {
+  background: transparent;
+  border: 1px solid #000;
+  color: #000;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.edit-build-page .cancel-row .top-cancel:hover,
+.edit-build-page .cancel-row .delete-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.edit-build-page .cancel-row .delete-btn {
+  margin-left: auto;
+  border-radius: 0;
+}
+
+/* === Form Structure === */
+.edit-build-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.edit-build-page .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* === Labels === */
+.edit-build-page label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+/* === Inputs & Focus States === */
+.edit-build-page textarea,
+.edit-build-page select,
+.edit-build-page input[type="text"],
+.edit-build-page input[type="file"] {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+.edit-build-page textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.edit-build-page textarea:focus,
+.edit-build-page select:focus,
+.edit-build-page input[type="text"]:focus,
+.edit-build-page input[type="file"]:focus {
+  outline: none;
+  border-color: #000;
+}
+.edit-build-page select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* === Main Categories === */
+.edit-build-page .category-block {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 2px solid #000;
+}
+.edit-build-page .category-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+
+/* === Sub-categories === */
+.edit-build-page .sub-category-block {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-left: 4px solid #000;
+}
+.edit-build-page .sub-title {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #d1d5db;
+  color: #000;
+}
+
+/* === Mods Grid & Items === */
+.edit-build-page .mods-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.edit-build-page .mod-checkbox {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.edit-build-page .mod-checkbox:hover {
+  border-color: #000;
+}
+.edit-build-page .mod-checkbox input[type="checkbox"] {
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  transform: scale(1.1);
+}
+.edit-build-page .mod-name {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+/* === Details & Thumbnails === */
+.edit-build-page .mod-details-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.edit-build-page .mod-details-row input,
+.edit-build-page .mod-details-row input[type="file"] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+.edit-build-page .mod-thumb-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.edit-build-page .mod-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #d1d5db;
+}
+.edit-build-page .remove-thumb {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* === Cover Previews === */
+.edit-build-page .preview-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.edit-build-page .preview-item {
+  position: relative;
+}
+.edit-build-page .preview-item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #d1d5db;
+}
+.edit-build-page .preview-item button {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* === Add Custom Mod & Subcat === */
+.edit-build-page .add-custom-mod,
+.edit-build-page .add-subcat {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+.edit-build-page .add-custom-mod input,
+.edit-build-page .add-subcat input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+.edit-build-page .add-custom-mod button,
+.edit-build-page .add-subcat button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.edit-build-page .add-custom-mod button:hover,
+.edit-build-page .add-subcat button:hover {
+  background: #333;
+}
+
+/* === Accordion Style === */
+.edit-build-page details {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  margin-top: 1rem;
+}
+.edit-build-page summary {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e5e5;
+}
+.edit-build-page details[open] summary {
+  border-bottom: 1px solid #d1d5db;
+}
+.edit-build-page .mod-card-vertical {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+.edit-build-page .mod-card-vertical:last-child {
+  border-bottom: none;
+}
+.edit-build-page .mod-extras-vertical {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.edit-build-page .mod-extras-vertical input {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  flex: 1;
+}
+
+/* === Save Button === */
+.edit-build-page .form-actions {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.edit-build-page .save-btn {
+  padding: 0.75rem 1rem;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.edit-build-page .save-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* === Hide any legacy bottom delete button === */
+.edit-build-page .delete-row {
+  display: none !important;
+}
+
+/* === Override Save Changes === */
+.edit-build-page .save-btn,
+.edit-build-page button[type="submit"] {
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+.edit-build-page .save-btn:hover,
+.edit-build-page button[type="submit"]:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .edit-build-page {
+    padding: 1rem;
+  }
+  .edit-build-page .mods-container {
+    grid-template-columns: 1fr;
+  }
+  .edit-build-page .model-row,
+  .edit-build-page .add-custom-mod,
+  .edit-build-page .add-subcat,
+  .edit-build-page .mod-details-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

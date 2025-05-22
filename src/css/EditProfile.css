@@ -1,0 +1,193 @@
+.edit-profile-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  overflow-y: auto;
+}
+
+/* === Top Card === */
+.edit-profile-container .profile-top-card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.edit-profile-container .profile-preview.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === Avatar === */
+.edit-profile-container .avatar-wrapper {
+  margin-bottom: 8px;
+}
+
+.edit-profile-container .avatar-preview {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.edit-profile-container .avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.edit-profile-container .avatar-placeholder-text {
+  color: #888;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+/* === Avatar Buttons === */
+.edit-profile-container .avatar-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-profile-container .change-photo-btn,
+.edit-profile-container .remove-photo-btn,
+.edit-profile-container .save-btn,
+.edit-profile-container .cancel-btn {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.edit-profile-container .change-photo-btn:hover,
+.edit-profile-container .cancel-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.edit-profile-container .remove-photo-btn {
+  background-color: #fff;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.edit-profile-container .remove-photo-btn:hover {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+/* === Back Button === */
+.edit-profile-container .back-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.edit-profile-container .back-btn:hover {
+  text-decoration: underline;
+}
+
+/* === Form Section === */
+.edit-profile-container .edit-profile-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.edit-profile-container .form-group label {
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edit-profile-container .form-group input,
+.edit-profile-container .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+
+/* === Save Button === */
+.edit-profile-container .save-btn {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.edit-profile-container .save-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* === Cropper Modal === */
+.edit-profile-container .cropper-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.edit-profile-container .cropper-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  gap: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.edit-profile-container .cropper-box {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border: 1px solid #000;
+}
+
+.edit-profile-container .cropper-controls-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}

@@ -1,0 +1,373 @@
+/* === Scoped Styles for BusinessDetail Page === */
+.business-detail-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+}
+
+.business-detail-container h1 {
+  font-size: 2.75rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.business-detail-container p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.business-detail-container strong {
+  color: #000000;
+  font-weight: 500;
+}
+
+.business-detail-container .business-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 32px;
+  filter: grayscale(20%) contrast(1.1);
+}
+
+.business-detail-container .services-list {
+  margin-top: 40px;
+  text-align: left;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 32px;
+}
+
+.business-detail-container .services-list h3 {
+  color: #000000;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.business-detail-container .services-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.business-detail-container .services-list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  color: #6b7280;
+}
+
+.business-detail-container .services-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: 500;
+}
+
+.business-detail-container .review-section {
+  margin-top: 48px;
+  text-align: left;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 32px;
+}
+
+.business-detail-container .review-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.business-detail-container .review-section form button {
+  margin-top: 16px;
+}
+
+.business-detail-container .review-section form button.cancel-edit-btn {
+  background-color: #f3f4f6;
+  color: #000000;
+  border: 1px solid #d1d5db;
+  margin-left: 12px;
+}
+
+.business-detail-container .review-section form button.cancel-edit-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.business-detail-container .review-section form textarea {
+  resize: none;
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.business-detail-container .review-section form textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.business-detail-container .edit-review-btn {
+  background-color: #f3f4f6;
+  color: #000000;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-top: 12px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.business-detail-container .edit-review-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.business-detail-container .review-username {
+  font-weight: 500;
+  color: #000000;
+}
+
+.business-detail-container .review-edited {
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-left: 8px;
+}
+
+.business-detail-container .review-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.business-detail-container .star-rating button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-right: 4px;
+}
+
+.business-detail-container .star-rating .on {
+  color: #000000;
+}
+
+.business-detail-container .star-rating .off {
+  color: #d1d5db;
+}
+
+.business-detail-container textarea {
+  width: 100%;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 0;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.business-detail-container textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.business-detail-container input[type="file"] {
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  font-family: inherit;
+}
+
+.business-detail-container button[type="submit"] {
+  padding: 12px 32px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.business-detail-container button[type="submit"]:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+}
+
+.business-detail-container .comments-section {
+  margin-top: 64px;
+  text-align: left;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 48px;
+}
+
+.business-detail-container .reviews-summary {
+  text-align: center;
+  margin-top: 48px;
+  padding: 32px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.business-detail-container .average-rating h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #000000;
+  font-weight: 300;
+}
+
+.business-detail-container .average-rating span {
+  font-size: 1.25rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.business-detail-container .average-rating p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.business-detail-container .reviews-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 48px;
+}
+
+.business-detail-container .review-card {
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: all 0.2s ease;
+}
+
+.business-detail-container .review-card:hover {
+  transform: translateY(-2px);
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.business-detail-container .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.business-detail-container .stars {
+  color: #000000;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.business-detail-container .review-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.business-detail-container .review-text {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.business-detail-container .review-image {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 0;
+  filter: grayscale(10%);
+}
+
+.business-detail-container h2,
+.business-detail-container h3 {
+  color: #000000;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .business-detail-container {
+    margin: 40px 20px;
+    padding: 24px;
+  }
+
+  .business-detail-container h1 {
+    font-size: 2rem;
+  }
+
+  .business-detail-container .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .business-detail-container .average-rating h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Scoped Back Button */
+.business-detail-container .back-button {
+  margin-top: 115px;
+  margin-left: 20px;
+  font-family: 'Oswald', sans-serif;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.business-detail-container .back-button:hover {
+  text-decoration: underline;
+}

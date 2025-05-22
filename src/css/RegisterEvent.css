@@ -1,0 +1,308 @@
+/* ── Scoped Variables ───────────────────────────────────────────────────────── */
+.register-event-container {
+  --font-heading: 'Oswald', sans-serif;
+  --font-body:    'Oswald', sans-serif;
+  --color-text:      #111;
+  --color-text-2:    #555;
+  --color-border:    #e0e0e0;
+  --color-shadow-l:  rgba(0,0,0,0.04);
+  --color-shadow-d:  rgba(0,0,0,0.10);
+  --color-btn:       #E63946;
+  --color-btn-hov:   #C62828;
+  --radius:          8px;
+  --spacing:         16px;
+}
+
+/* ── Page Container ───────────────────────────────────────────────────────── */
+.register-event-container {
+  position:        relative;
+  width:           100vw;
+  margin-left:     calc(50% - 50vw);
+  margin-right:    calc(50% - 50vw);
+  min-height:      100vh;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  padding:         2rem 1rem;
+  box-sizing:      border-box;
+  background:      url('../images/porsche.jpeg') center/cover no-repeat fixed;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.register-event-container .register-card {
+  width:           100%;
+  max-width:       800px;
+  background:      rgba(255,255,255,0.75);
+  border-radius:   var(--radius);
+  box-shadow:      0 8px 24px var(--color-shadow-d);
+  padding:         calc(var(--spacing) * 2);
+  box-sizing:      border-box;
+  animation:       fadeIn 0.4s ease both;
+}
+
+/* ── Title ───────────────────────────────────────────────────────────────── */
+.register-event-container .wide-title {
+  font-family:     var(--font-heading);
+  font-size:       2rem;
+  font-weight:     700;
+  color:           var(--color-text);
+  text-align:      center;
+  margin-bottom:   calc(var(--spacing) * 1.5);
+}
+
+/* ── Two-Column Form Grid ───────────────────────────────────────────────── */
+.register-event-container .register-form.two-column {
+  display:         grid;
+  grid-template-columns: 1fr 1fr;
+  gap:             var(--spacing);
+}
+
+/* Let these span both columns */
+.register-event-container .register-form.two-column .cars-section-header,
+.register-event-container .register-form.two-column .car-form-fields {
+  grid-column:     1 / -1;
+}
+
+/* ── Section Header ──────────────────────────────────────────────────────── */
+.register-event-container .cars-section-header {
+  text-align:      center;
+  margin:          var(--spacing) 0;
+}
+
+.register-event-container .cars-section-header h3 {
+  font-family:     var(--font-heading);
+  font-size:       1.25rem;
+  font-weight:     600;
+  color:           var(--color-text);
+}
+
+/* ── Tabs ───────────────────────────────────────────────────────────────── */
+.register-event-container .car-tabs {
+  display:         flex;
+  justify-content: center;
+  gap:             calc(var(--spacing) / 2);
+  margin-bottom:   var(--spacing);
+}
+
+.register-event-container .car-tab-button,
+.register-event-container .add-car-button {
+  padding:         0.5rem 1rem;
+  font-family:     var(--font-body);
+  font-size:       0.95rem;
+  border:          1px solid var(--color-border);
+  background:      #fff;
+  color:           var(--color-text);
+  border-radius:   var(--radius);
+  cursor:          pointer;
+  transition:      background 0.2s;
+}
+
+.register-event-container .car-tab-button:hover,
+.register-event-container .car-tab-button.active {
+  background:      var(--color-shadow-l);
+}
+
+/* ── Form Groups ─────────────────────────────────────────────────────────── */
+.register-event-container .form-group {
+  display:         flex;
+  flex-direction:  column;
+}
+
+.register-event-container .form-group label {
+  font-family:     var(--font-body);
+  font-weight:     600;
+  color:           var(--color-text);
+  margin-bottom:   0.5rem;
+  font-size:       0.95rem;
+}
+
+.register-event-container .form-group input,
+.register-event-container .form-group select {
+  padding:         0.75rem;
+  font-size:       1rem;
+  border:          1px solid var(--color-border);
+  border-radius:   var(--radius);
+  transition:      border-color 0.2s;
+  background:      #fff;
+  color:           var(--color-text);
+  box-sizing:      border-box;
+}
+
+.register-event-container .form-group input:focus,
+.register-event-container .form-group select:focus {
+  outline:         none;
+  border-color:    var(--color-text);
+}
+
+/* ── Checkbox Row ───────────────────────────────────────────────────────── */
+.register-event-container .form-group.checkbox {
+  flex-direction:  row;
+  align-items:     center;
+  margin-top:      var(--spacing);
+}
+
+.register-event-container .form-group.checkbox label {
+  font-weight:     400;
+  color:           var(--color-text-2);
+  cursor:          pointer;
+  margin:          0;
+}
+
+.register-event-container .form-group.checkbox input {
+  margin-right:    0.5rem;
+}
+
+/* ── Divider ────────────────────────────────────────────────────────────── */
+.register-event-container hr.section-divider {
+  grid-column:     1 / -1;
+  border:          none;
+  border-top:      1px solid var(--color-border);
+  margin:          var(--spacing) 0;
+}
+
+/* ── Remove Vehicle Button ───────────────────────────────────────────────── */
+.register-event-container .remove-car-button {
+  grid-column:     1 / -1;
+  padding:         0.75rem 1.5rem;
+  font-family:     var(--font-body);
+  font-size:       0.95rem;
+  font-weight:     600;
+  background:      #d32f2f;
+  color:           #fff;
+  border:          none;
+  border-radius:   var(--radius);
+  cursor:          pointer;
+  transition:      background 0.2s;
+  justify-self:    center;
+}
+
+.register-event-container .remove-car-button:hover {
+  background:      #b71c1c;
+}
+
+/* ── Form Actions (Submit / Cancel) ─────────────────────────────────────── */
+.register-event-container .form-actions {
+  grid-column:     1 / -1;
+  display:         flex;
+  justify-content: center;
+  gap:             var(--spacing);
+  margin-top:      var(--spacing);
+}
+
+.register-event-container .submit-btn,
+.register-event-container .cancel-btn {
+  padding:         0.75rem 2rem;
+  font-family:     var(--font-body);
+  font-size:       1rem;
+  font-weight:     600;
+  border-radius:   var(--radius);
+  border:          none;
+  cursor:          pointer;
+  transition:      background 0.2s;
+}
+
+.register-event-container .submit-btn {
+  background:      var(--color-btn);
+  color:           #fff;
+}
+
+.register-event-container .submit-btn:hover {
+  background:      var(--color-btn-hov);
+}
+
+.register-event-container .cancel-btn {
+  background:      #fff;
+  color:           var(--color-text);
+  border:          1px solid var(--color-border);
+}
+
+.register-event-container .cancel-btn:hover {
+  background:      var(--color-shadow-l);
+}
+
+/* ── Alerts ─────────────────────────────────────────────────────────────── */
+.register-event-container .confirmation-box,
+.register-event-container .error-message {
+  grid-column:     1 / -1;
+  padding:         var(--spacing);
+  border-radius:   var(--radius);
+  font-family:     var(--font-body);
+  font-size:       0.95rem;
+  text-align:      center;
+  box-shadow:      0 4px 12px var(--color-shadow-d);
+}
+
+.register-event-container .confirmation-box {
+  background:      #e6ffed;
+  color:           #2e7d32;
+  border:          1px solid #00b74a;
+}
+
+.register-event-container .error-message {
+  background:      #ffe5e5;
+  color:           #d93025;
+  border:          1px solid #d93025;
+}
+
+/* ── Fade-In Animation ───────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity:       0;
+    transform:     translateY(8px);
+  }
+  to {
+    opacity:       1;
+    transform:     translateY(0);
+  }
+}
+
+/* ── Override Submit in Card to Black/White ───────────────────────────────── */
+.register-event-container .register-card .submit-btn {
+  background-color: #000 !important;
+  border-color:     #000 !important;
+  color:            #fff !important;
+}
+
+/* ── Override: Equal‐width & spread buttons on Registration Page ───────────────── */
+.register-event-container .form-actions {
+  display: flex;           
+  gap: var(--spacing);    
+}
+
+.register-event-container .form-actions .submit-btn,
+.register-event-container .form-actions .cancel-btn {
+  flex: 1;                
+  max-width: none;        
+  margin: 0;               
+  text-align: center;     
+}
+
+.register-event-container .form-actions .submit-btn,
+.register-event-container .form-actions .cancel-btn {
+  padding: 0.75rem 0;     
+}
+
+/* Keeping black/white styling */
+.register-event-container .form-actions .submit-btn {
+  background-color: #000 !important;
+  border: 2px solid #000 !important;
+  color: #fff !important;
+}
+
+.register-event-container .form-actions .cancel-btn {
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
+  color: #000 !important;
+}
+
+/* Hover states */
+.register-event-container .form-actions .submit-btn:hover {
+  background-color: #333 !important;
+  transform: translateY(-1px);
+}
+
+.register-event-container .form-actions .cancel-btn:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}

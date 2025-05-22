@@ -1,0 +1,254 @@
+/* Main container for the businesses page */
+.businesses-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e5e5e5;
+}
+
+/* Main heading */
+.businesses-container h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #000000;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Search form container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Address input field */
+.address-input, .category-select {
+  padding: 15px 20px;
+  border: 1px solid #000000;
+  border-radius: 0;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 200px;
+}
+
+/* Input hover and focus states */
+.address-input:hover, .category-select:hover,
+.address-input:focus, .category-select:focus {
+  background-color: #f8f8f8;
+  border-color: #333333;
+}
+
+/* Search button */
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+/* Search button hover state */
+.search-button:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Business cards grid */
+.businesses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.businesses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual business card container */
+.business-card {
+  background: #fff;
+  border: 1px solid #000;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  background: #000;
+}
+
+.business-card h3 {
+  margin: 0 0 0.5em;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.business-card h3 a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.business-card:hover h3 a {
+  color: #fff;
+}
+
+.business-card p {
+  margin: 0.5em 0;
+  color: #000;
+  font-weight: 300;
+}
+
+.business-card:hover p {
+  color: #fff;
+}
+
+.business-card p strong {
+  font-weight: 500;
+}
+
+/* Card flip animation container */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+/* Card flip on hover */
+.business-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card front and back base styles */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Card front face */
+.card-front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+/* Card back face */
+.card-back {
+  background: #000000;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+}
+
+/* Business link styling */
+.business-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Business link hover state */
+.business-link:hover {
+  color: #666666;
+  text-decoration: none;
+}
+
+/* Add business section container */
+.add-business-link-container {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 40px;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  text-align: center;
+}
+
+/* Add business button */
+.add-business-button {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 30px;
+  border: 2px solid #000000;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* Add business button hover state */
+.add-business-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add business description text */
+.add-business-link-container p {
+  font-size: 1rem;
+  color: #666666;
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.6;
+}
+

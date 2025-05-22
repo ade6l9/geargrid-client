@@ -1,0 +1,125 @@
+/* src/css/Footer.css */
+
+   /* main footer container styles */
+   .gg-footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* container for logo/ link columns */
+  .footer-main {
+    display: flex;
+    justify-content: center; /* centers content horizontally */
+    align-items: flex-start;
+    gap: 80px; /* space between columns */
+    flex-wrap: wrap; /* wrap on small screens */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 30px;
+    text-align: left;
+  }
+  
+  
+  /* logo container */
+  .footer-brand {
+    flex: 1 1 200px;
+    max-width: 200px;
+  }
+  
+  /* logo image */
+  .footer-brand img {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+  
+  /* container for link columns */
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* center whole columns group */
+    gap: 60px;
+    margin-top: 20px;
+  }
+  
+  /* individual link column */
+  .footer-column {
+    flex: 0 0 auto; /* fixed width so doesn’t grow or shrink */
+    display: flex;
+    flex-direction: column;
+    min-width: 150px; /* gives each column enough space */
+    align-items: flex-start;  /* align links to the left */
+  }
+  
+  
+  /* column header style */
+  .footer-column h4 {
+    margin-bottom: 10px;
+    color: #ff7f11; /* orange headings */
+  }
+  
+  /* footer link style */
+  .footer-column a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  
+  /* link hover effect */
+  .footer-column a:hover {
+    color: #ff8011; /* brighter orange on hover */
+  }
+  
+  /* bottom section for social icons and legal links */
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  
+
+  /* style for the clickable wrapper */
+  .social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  /* style for the FontAwesome <i> tag icons */
+  .social-icons i {
+    color: #ff7f11;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;  /* transition for scaling */
+  }
+  
+  /* enlarge icons slightly on hover */
+  .social-icons i:hover {
+    transform: scale(1.3);  /* icons grow 30% on hover */
+  }
+
+  
+  
+  /* legal links container */
+  .legal-links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* legal link styles */
+  .legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+  }
+  
+  /* legal link hover effect */
+  .legal-links a:hover {
+    color: #ff7f11;
+  }
+  

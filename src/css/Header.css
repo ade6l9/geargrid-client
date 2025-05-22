@@ -1,0 +1,88 @@
+/* Header Container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 25px; 
+    background: transparent;
+    z-index: 1000; 
+  }
+  
+  /* Logo Styling - Bigger and Properly Positioned */
+  .header-logo {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  /* Menu Icon (Three-line Hamburger) */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    right: 40px; 
+    padding-right: 15px; 
+  }
+  
+  /* Menu Bars - Keep Size and Alignment */
+  .bar {
+    width: 30px; 
+    height: 3px;
+    background-color: rgb(2, 1, 1); 
+    border-radius: 10px;
+  }
+
+/*added for home page brighteness of header*/
+/* Home page effect */
+.home-page .menu-icon .bar {
+  animation: glow 1.5s infinite alternate;
+  background-color: white;
+}
+
+/* Keyframes to animate brightness */
+@keyframes glow {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(3); }
+}
+
+@keyframes flicker {
+  0% { filter: brightness(20); }
+  50% { filter: brightness(20); }
+  100% { filter: brightness(20); }
+}
+
+/* Apply bright effect ONLY when on the Home Page */
+.home-page .header-logo {
+  animation: flicker 2s ease-in-out forwards;
+}
+
+
+/* overlay menu bar for home page*/
+
+/* Add white overlay bars on the home page */
+.home-page .menu-icon {
+  position: relative; 
+}
+
+.home-page .menu-icon::before,
+.home-page .menu-icon::after {
+  content: none;
+}
+
+.home-page .menu-icon::before {
+  top: 0;
+}
+
+.home-page .menu-icon::after {
+  bottom: 0;
+}
+
+.home-page .menu-icon .bar:nth-child(2) {
+  background-color: white; 
+}

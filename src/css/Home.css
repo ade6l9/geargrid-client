@@ -1,0 +1,182 @@
+/* === LANDING PAGE FULL BACKGROUND SECTION === */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/vecteezy_classic-modified-car-with-dark-smokie-background_26992802.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease-in-out 1.5s forwards;
+}
+.fade-in:nth-child(1) { animation-delay: 0.5s; }
+.fade-in:nth-child(2) { animation-delay: 1s; }
+.fade-in:nth-child(3) { animation-delay: 1.5s; }
+.fade-in:last-child { animation-delay: 2s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes smokeEffect {
+  0% { opacity: 0.2; transform: scale(1.05); }
+  50% { opacity: 0.4; transform: scale(1.1); }
+  100% { opacity: 0.1; transform: scale(1.15); }
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/vecteezy_classic-modified-car-with-dark-smokie-background_26992802.jpg') no-repeat center center/cover;
+  opacity: 0.2;
+  animation: smokeEffect 5s infinite alternate ease-in-out;
+}
+
+/* === SCROLLABLE SECTIONS === */
+.section-scroll-container {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  height: 100vh;
+  width: 100%;
+  padding: 60px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+}
+
+.scroll-section:nth-child(2) {
+  background-color: #1a1a1a;
+}
+
+.scroll-section:nth-child(3) {
+  background-color: #222;
+}
+
+/* Transparent effect for the "Get Involved" section only */
+.get-involved-section {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  position: relative;
+}
+
+/* Move the text container slightly down but not cut off */
+.get-involved-section .scroll-overlay-text {
+  margin-top: 30px;
+}
+
+/* Increase internal padding so text isn’t cut from the top */
+.get-involved-section .glass-box {
+  padding-top: 60px;
+}
+
+/* === VIDEO SECTION (FULLSCREEN) === */
+.scroll-video-full {
+  position: relative;
+  padding: 0;
+  background: none;
+  overflow: hidden;
+}
+
+.scroll-full-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.4);
+}
+
+.scroll-overlay-text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  padding: 20px;
+}
+
+/* === GLASS EFFECT BOX FOR OVERLAY TEXT === */
+.glass-box {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.glass-box h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.glass-box p {
+  font-size: 18px;
+  color: #e0e0e0;
+  line-height: 1.7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .content h1 { font-size: 32px; }
+  .scroll-section-content h2,
+  .glass-box h2 { font-size: 28px; }
+
+  .scroll-section-content p,
+  .glass-box p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .get-involved-section .scroll-overlay-text {
+    margin-top: 10px;
+  }
+
+  .get-involved-section .glass-box {
+    padding-top: 40px;
+  }
+}

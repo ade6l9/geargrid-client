@@ -1,0 +1,466 @@
+/* ===== RESET & BASE STYLES ===== */
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Prevent any extra margin or padding from affecting layout */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.car-build-page {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 40px 40px 40px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ===== HEADER SECTION ===== */
+.car-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 120px 0 40px 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.car-header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1.1;
+}
+
+/* ===== EDIT BUTTON - POSITIONED IN HEADER ===== */
+.car-build-page .edit-button {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    padding: 12px 30px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.car-build-page .edit-button:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+/* ===== IMAGE SLIDER SECTION ===== */
+.car-image-slider {
+    max-width: 100%;
+    margin: 0 auto 80px auto;
+    position: relative;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+    max-height: 600px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    border: 1px solid #e5e5e5;
+}
+
+/* Vertical image handling */
+.slick-slide img[style*="height"] {
+    max-width: 60%;
+    max-height: 700px;
+    object-fit: contain;
+}
+
+/* Slider navigation */
+.slick-prev, .slick-next {
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+}
+
+.slick-prev {
+    left: -80px;
+}
+
+.slick-next {
+    right: -80px;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 24px;
+    color: white;
+    opacity: 1;
+}
+
+.slick-dots {
+    bottom: -60px;
+}
+
+.slick-dots li button:before {
+    font-size: 14px;
+    color: #000;
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #000;
+}
+
+/* ===== DESCRIPTION SECTION ===== */
+.car-build-page .description-section {
+    margin: 60px 0;
+    width: 100%;
+}
+
+.car-build-page .section-title {
+    font-size: 2rem;
+    font-weight: 300;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    color: #000;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.car-build-page .car-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ===== MODIFICATIONS SECTION ===== */
+.car-build-page .modifications {
+    margin-top: 80px;
+    width: 100%;
+}
+
+/* Main category styling */
+.car-build-page .category-block {
+    margin-bottom: 80px;
+    padding: 40px 0;
+    border-top: 3px solid #000;
+}
+
+.car-build-page .category-block:first-child {
+    border-top: none;
+}
+
+/* Main category title */
+.car-build-page .category-block .category-title {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: #000;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.car-build-page .category-block .category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #000;
+}
+
+/* Sub-category styling */
+.car-build-page .sub-category-block {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #fafafa;
+    border-left: 4px solid #000;
+    border-radius: 0;
+}
+
+.car-build-page .sub-category-block:last-child {
+    margin-bottom: 0;
+}
+
+/* Sub-category title */
+.car-build-page .sub-category-block .sub-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Mods container - improved grid */
+.car-build-page .sub-category-block .mods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Individual modification item */
+.car-build-page .mod-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.car-build-page .mod-item:hover {
+    border-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.car-build-page .mod-item .mod-details {
+    flex: 1;
+}
+
+.car-build-page .mod-item .mod-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.car-build-page .mod-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #e5e5e5;
+    margin-right: 20px;
+    border-radius: 0;
+}
+
+/* ===== GALLERY SECTION ===== */
+.car-build-page .gallery-section {
+    background: #fff;
+    color: #000;
+    padding: 60px 40px;
+    margin-top: 80px;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+}
+
+.car-build-page .gallery-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+}
+
+.car-build-page .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.car-build-page .gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.car-build-page .gallery-image:hover {
+    transform: scale(1.02);
+    border-color: #000;
+}
+
+/* Special handling for vertical gallery images */
+.car-build-page .gallery-image.vertical {
+    height: 350px;
+    object-fit: contain;
+    background-color: #fafafa;
+}
+
+/* ===== USERNAME BUTTON ===== */
+.car-build-page .username-button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto 0 auto;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.car-build-page .username-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .car-build-page {
+        padding: 0 30px 30px 30px;
+    }
+    
+    .car-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .car-build-page .category-block .category-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-build-page {
+        padding: 0 20px 20px 20px;
+    }
+    
+    .car-header {
+        padding: 100px 0 30px 0;
+    }
+    
+    .car-header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .car-build-page .edit-button {
+        position: static;
+        margin: 20px auto 0 auto;
+        display: block;
+        width: fit-content;
+    }
+    
+    .car-build-page .category-block .category-title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .car-build-page .sub-category-block .sub-title {
+        font-size: 1.3rem;
+    }
+    
+    .car-build-page .sub-category-block .mods-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-build-page .mod-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .car-build-page .mod-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .car-build-page .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .slick-prev, .slick-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slick-prev {
+        left: -50px;
+    }
+    
+    .slick-next {
+        right: -50px;
+    }
+    
+    .slick-prev:before, .slick-next:before {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-build-page {
+        padding: 0 15px 15px 15px;
+    }
+    
+    .car-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .car-build-page .section-title,
+    .car-build-page .gallery-title {
+        font-size: 1.5rem;
+    }
+    
+    .car-build-page .category-block .category-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .slick-prev, .slick-next {
+        display: none !important;
+    }
+}

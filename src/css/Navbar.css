@@ -1,0 +1,192 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Oswald", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 4px;
+  background-color: #333;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.menu-overlay {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  transition: opacity 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.menu-image {
+  width: 50%;
+  height: 100%;
+  background: url("../images/IMG_0015.jpeg") no-repeat center center;
+  background-size: cover;
+}
+
+.menu-container {
+  width: 50%;
+  height: 100%;
+  background: rgba(245, 245, 245, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 5%;
+  position: relative;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 150px;
+}
+
+.menu-links li {
+  margin: 22px 0;
+  font-size: 28px;
+}
+
+.menu-links li a,
+.menu-links li span {
+  text-decoration: none;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.menu-links li a:hover,
+.menu-links li span:hover {
+  color: #ff6600;
+}
+
+.grid-icon {
+  font-size: 20px;
+  opacity: 0;
+  position: absolute;
+  right: -40px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-links li:hover {
+  transform: translateX(-10px);
+}
+
+.menu-links li:hover .grid-icon {
+  opacity: 1;
+  transform: translateX(-5px);
+}
+
+.logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-modal {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10000;
+}
+
+.logout-modal button {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-modal button:first-child {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.logout-modal button:last-child {
+  background-color: #ccc;
+  color: black;
+}
+
+/* === Black & White Button Overrides for Logout Modal === */
+.logout-modal button {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-modal button:hover {
+  background-color: #fff;
+  color: #000;
+}

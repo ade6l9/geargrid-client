@@ -1,0 +1,184 @@
+.organize-event-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; 
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.organize-event-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.organize-event-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.organize-event-container p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.organize-event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #000; /* Accent color */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,0,0, 0.1);
+}
+
+.submit-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #000; /* Accent color */
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #333;
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.success-message {
+    margin: 20px 0;
+    padding: 15px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-message {
+    margin: 20px 0;
+    padding: 15px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.back-button {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 5px 0;
+}
+.back-button:hover {
+    text-decoration: underline;
+}
+
+/* === Submit Button Override — Scoped to .organize-event-page === */
+.organize-event-page .submit-button {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.organize-event-page .submit-button:hover:not(:disabled) {
+  background-color: #fff;
+  color: #000;
+}
+
+.organize-event-page .submit-button:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
+
+/* === Scoped Back Button Offset — ONLY on OrganizeEvent Page === */
+.organize-event-page .back-button {
+  margin-top: 115px;       
+  margin-left: 20px;      
+  font-family: 'Oswald', sans-serif;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.organize-event-page .back-button:hover {
+  text-decoration: underline;
+}
+
