@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { vehicleData } from '../data/vehicleData';
 import { modCategories } from '../data/modCategories';
 import '../css/AddBuild.css';
+import { API_BASE } from '../utils/imageUrl';
 
 // AddBuild component: lets user create a new car build with details, images, and mods
 const AddBuild = () => {
