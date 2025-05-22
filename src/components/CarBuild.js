@@ -33,7 +33,7 @@ const CarBuild = () => {
     const fetchBuild = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3001/api/builds/${id}`,
+          `${API_BASE}/api/builds/${id}`,
           { withCredentials: true }
         );
         if (!data.success) throw new Error(data.message);

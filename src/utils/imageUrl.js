@@ -1,4 +1,4 @@
-export const API_BASE = 'http://localhost:3001';
+export const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
 
 export function resolveImageUrl(path, type = 'build') {
   const defaultBuildImage = "/default-car.jpg";

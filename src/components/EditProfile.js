@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Cropper from "react-easy-crop";
 import "../css/EditProfile.css";
+import { API_BASE } from '../utils/imageUrl';
 
 const EditProfile = () => {
   const [formData, setFormData] = useState({ username: "", name: "", bio: "" });
@@ -43,7 +44,7 @@ const handleSubmit = async (e) => {
       avatar_url: avatar,
     };
     try {
-      const response = await fetch(`http://localhost:3001/api/profile/${userId}`, {
+      const response = await fetch(`${API_BASE}/api/profile/${userId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
